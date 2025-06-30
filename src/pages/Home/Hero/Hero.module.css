@@ -1,0 +1,149 @@
+@import '../../../index.css';
+
+.hero {
+    display: flex;
+    margin-top: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right;
+    user-select: none;
+    gap: 0.5rem;
+}
+
+.title {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    color: var(--color-white-soft);
+    text-shadow: 1px 1px 3px var(--color-shadow);
+    text-align: right;
+}
+
+.university {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-white-soft);
+    opacity: 0.6;
+    text-align: right;
+    margin: 0;
+}
+
+.subtitle {
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--color-white-soft);
+    line-height: 1.2;
+    max-width: 100%;
+    margin: 0.55rem 0;
+    text-align: left;
+}
+
+.motivation {
+    color: var(--color-white-soft);
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: left;
+}
+
+.message {
+    display: inline-block;
+    white-space: normal;
+    word-break: break-word;
+}
+
+.cursor {
+    display: inline-block;
+    width: 1ch;
+    color: var(--color-primary-dark);
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Статистика */
+.stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1rem;
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+    animation-delay: 0.3s;
+}
+.statItem {
+    text-align: center;
+    flex: 1;
+}
+.statNumber {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--color-primary);
+    display: block;
+    animation: countUp 0.5s ease-in-out;
+}
+
+.statLabel {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-primary-dark);
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ---- Media ---- */
+@media (min-width: 600px) {
+    .hero {
+        /*padding: 2rem 3rem;*/
+    }
+
+    .title {
+        font-size: clamp(4rem, 3.5vw, 3rem);
+    }
+
+    .university {
+        font-size: 1.25rem;
+    }
+
+    .subtitle {
+        font-size: 2rem;
+    }
+
+    .motivation {
+        font-size: 2rem;
+    }
+
+    .statNumber {
+        font-size: 4rem;
+    }
+
+    .statLabel {
+        font-size: 2rem;
+    }
+}

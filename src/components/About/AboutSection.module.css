@@ -1,0 +1,40 @@
+.aboutSection {
+    margin: 0 auto;
+}
+
+.heading {
+    position: relative;
+    color:var(--color-primary);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.text {
+    max-height: 300px;
+    overflow-y: hidden;
+    transition: max-height 0.4s ease;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.expanded {
+    overflow-y: auto;
+}
+
+.subheading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 2rem 0 1rem;
+}
+
+.staffGrid {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}

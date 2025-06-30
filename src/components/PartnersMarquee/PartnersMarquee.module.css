@@ -1,0 +1,50 @@
+.marqueeWrapper {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.marquee {
+    backdrop-filter: blur(2px);
+    padding: 1rem 1rem;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+.track {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll 30s linear infinite;
+}
+
+.partner {
+    display: inline-block;
+    margin: 0 2rem;
+    font-size: 1.125rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    opacity: 0.9;
+    transition: transform 0.3s;
+}
+
+.partner:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}

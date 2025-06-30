@@ -1,0 +1,84 @@
+.container {
+  padding: 1.5rem;
+  max-width: 64rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.degree {
+  font-size: 1.125rem;
+  color: var(--color-text-primary);
+  opacity: 0.8;
+}
+
+.gridInfo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  font-size: 0.875rem;
+  background-color: var(--color-background);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px var(--color-shadow);
+}
+
+.description {
+  font-size: 1rem;
+  color: var(--color-text-primary);
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  color: var(--color-primary-dark);
+}
+
+.list {
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.careerCard {
+  background-color: var(--color-white-muted);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 4px var(--color-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.careerTitle {
+  font-weight: bold;
+  font-size: 1.125rem;
+  color: var(--color-primary-dark);
+}
+
+.salary {
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--color-text-primary);
+}
+
+.alumniCard {
+  background-color: var(--color-white-soft);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 4px var(--color-shadow);
+}
+
+@media (max-width: 640px) {
+  .gridInfo {
+    grid-template-columns: 1fr;
+  }
+}

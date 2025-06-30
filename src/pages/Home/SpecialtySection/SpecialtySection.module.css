@@ -1,0 +1,123 @@
+.header {
+    margin-bottom: 1rem; /* mb-12 */
+    text-align: center;
+}
+
+.titleSpecialties {
+    position: relative;
+    font-weight: 700;
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.subtitle {
+    position: relative;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+}
+
+.cardsContainer {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    padding: 1rem 0;
+}
+
+/* Mobile — 1 колонка */
+@media (max-width: 639px) {
+    .cardsContainer {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Tablet — от 2 до 3 колонок */
+@media (min-width: 640px) and (max-width: 1023px) {
+    .cardsContainer {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+/* Desktop — 4 колонки */
+@media (min-width: 1024px) {
+    .cardsContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .titleSpecialties {
+        font-size: clamp(2rem, 5vw, 3rem);
+    }
+    .subtitle {
+        font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    }
+}
+
+.levelSelector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.levelButton {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-primary-light);
+    background: var(--color-primary-light);
+    cursor: pointer;
+    border-radius: 12px;
+    transition:
+            background-color 0.3s ease,
+            color 0.3s ease,
+            box-shadow 0.25s ease,
+            transform 0.2s ease,
+            border-color 0.3s ease;
+    color: var(--color-primary-dark);
+    font-weight: 500;
+    box-shadow: 0 1px 4px rgba(19, 83, 147, 0.1);
+    user-select: none;
+}
+
+.levelButton:hover {
+    background: var(--color-primary-light);
+    border-color: var(--color-primary);
+    color: var(--color-primary-dark);
+    box-shadow: 0 2px 8px rgba(19, 83, 147, 0.15);
+    transform: translateY(-2px);
+}
+
+.levelButton:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 4px rgba(19, 83, 147, 0.1);
+}
+
+/* Активная кнопка с теми же стилями, что и у hover */
+.activeLevelButton {
+    background: var(--color-primary-light);
+    padding: 0.6rem 1.4rem;
+    border: 1px solid var(--color-primary-light);
+    background: var(--color-primary);
+    cursor: pointer;
+    border-radius: 12px;
+    color: var(--color-primary-light);
+    box-shadow: 0 2px 8px rgba(19, 83, 147, 0.15);
+    font-weight: 700;
+    transform: translateY(-2px);
+    transition:
+            background-color 0.3s ease,
+            color 0.3s ease,
+            box-shadow 0.3s ease,
+            border-color 0.3s ease,
+            transform 0.2s ease;
+}
+
+/* При наведении на активную кнопку — чуть сильнее подъём и тень */
+.activeLevelButton:hover {
+    box-shadow: 0 4px 16px rgba(19, 83, 147, 0.25);
+    transform: translateY(-4px);
+}
+
+

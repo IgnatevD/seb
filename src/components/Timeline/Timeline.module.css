@@ -1,0 +1,185 @@
+.timelineSection {
+    max-width: 900px;
+    margin: 2rem auto 2rem;
+    padding: 0 1rem;
+    font-family: var(--font-sans);
+    color: var(--color-text-primary);
+}
+
+.title {
+    text-align: center;
+    color: var(--color-white-soft);
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    user-select: none;
+}
+
+.timeline {
+    position: relative;
+    padding: 1rem 0;
+}
+
+/* Вертикальная линия посередине, с изменяемой высотой */
+.line {
+    position: absolute;
+    left: 50%;
+    width: 4px;
+    background-color: var(--color-primary);
+    border-radius: 2px;
+    transform: translateX(-50%);
+    z-index: 1;
+    opacity: 0;
+    transition: height 0.3s ease, top 0.3s ease, opacity 0.3s ease;
+}
+
+/* Элемент таймлайна */
+.timelineItem {
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    user-select: none;
+    z-index: 2; /* Чтобы быть выше линии */
+    outline: none;
+}
+
+.timelineItem:focus .content {
+    box-shadow: 0 0 8px 3px var(--color-primary);
+}
+
+.content {
+
+    background: rgba(207, 226, 243, 0.25);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 12px;
+    box-shadow:
+            0 4px 30px rgba(0, 0, 0, 0.1),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+
+    padding: 2rem 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content:hover {
+    background-color: rgba(163, 196, 255, 0.4);
+    box-shadow:
+            0 6px 40px rgba(17, 83, 155, 0.4),
+            inset 0 0 0 1.5px rgba(255, 255, 255, 0.5);
+}
+
+.number {
+    position: absolute;
+    left: 43%;
+    top: -20px;
+
+    width: 42px;
+    height: 42px;
+    background-color: var(--color-primary);
+    color: var(--color-white-soft);
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 12px rgba(17, 83, 155, 0.7);
+    user-select: none;
+    z-index: 3;
+    border: 1px solid rgba(255,255,255,0.6);
+}
+
+/* Исходное скрытое состояние */
+.hidden {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    pointer-events: none;
+}
+
+/* Плавное появление */
+.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    pointer-events: auto;
+}
+
+
+
+.text {
+    flex: 1;
+}
+
+.stageTitle {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0 0 0.3rem;
+}
+
+.date {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    user-select: none;
+}
+
+
+/* Планшет и десктоп */
+@media (min-width: 768px) {
+    .timelineItem {
+        width: 50%;
+        padding: 1rem 2rem;
+    }
+
+    /* Левая колонка */
+    .timelineItem.left {
+        left: 0;
+        text-align: right;
+    }
+
+    .timelineItem.left .number {
+        left: auto;
+        right: 0;
+    }
+
+    /* Правая колонка */
+    .timelineItem.right {
+        display: block;
+        left: 50%;
+        text-align: left;
+    }
+
+    .timelineItem.right .content {
+        margin-left: 3.5rem; /* отодвинуть контент правее номера */
+        justify-content: flex-start;
+    }
+
+    .timelineItem.right .number {
+        left: 0;
+        right: auto;
+    }
+}
+
+/* Раскрытый блок */
+.description {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--color-black-soft);
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.expanded .content {
+    background-color: rgba(163, 196, 255, 0.7);
+    box-shadow:
+            0 6px 40px rgba(17, 83, 155, 0.6),
+            inset 0 0 0 2px rgba(255, 255, 255, 0.6);
+}

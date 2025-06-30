@@ -1,0 +1,16 @@
+module.exports = {
+	extends: [
+		"stylelint-config-standard",
+		"stylelint-config-css-modules"
+	],
+	rules: {
+		"selector-class-pattern": null,
+		"no-descending-specificity": null,
+	},
+	ignoreFiles: [
+		"**/*.js",
+		"**/*.ts",
+		"**/*.jsx",
+		"**/*.tsx",
+	],
+};

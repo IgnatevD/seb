@@ -1,0 +1,242 @@
+.footer {
+    background-color: var(--color-background-blur);
+    backdrop-filter: blur(4px);
+    padding: 2rem 1rem;
+    color: var(--color-text-primary);
+    box-shadow: 0 -2px 10px var(--color-shadow);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+    max-width: 1200px;
+    padding: 0 1rem;
+}
+
+.logoBlock {
+    margin-bottom: 0.5rem;
+}
+
+.logo {
+    height: 80px;
+    width: auto;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.address {
+    font-size: 1rem;
+    font-style: normal;
+    line-height: 1.5;
+    font-weight: 400;
+    max-width: 350px;
+}
+
+.phone {
+    margin-top: 0.5rem;
+    margin-bottom:  0.5rem;
+}
+
+.link {
+    color: var(--color-primary-dark);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+
+.socialList {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.socialIconLink {
+    color: var(--color-primary);
+    font-size: 2.5rem;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.socialIconLink:hover {
+    color: var(--color-primary-dark);
+    transform: scale(1.2);
+}
+
+.footerBottom {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--color-text-primary);
+    opacity: 0.7;
+    text-align: center;
+    font-weight: 400;
+    font-style: normal;
+    user-select: none;
+}
+
+
+/* Для планшетов и десктопов */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .address {
+        max-width: 40%;
+    }
+
+    .socialList {
+        justify-content: flex-end;
+        max-width: 40%;
+    }
+}
+
+.logoBlock {
+    margin-bottom: 0.5rem;
+}
+
+.logo {
+    height: 80px;
+    width: auto;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.address {
+    font-size: 1rem;
+    font-style: normal;
+    line-height: 1.5;
+    font-weight: 400;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.phone {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.link {
+    color: var(--color-primary-dark);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.socialList {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    max-width: 100%;
+}
+
+.socialIconLink {
+    color: var(--color-primary);
+    font-size: 2.5rem;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.socialIconLink:hover {
+    color: var(--color-primary-dark);
+    transform: scale(1.2);
+}
+
+.footerBottom {
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+    color: var(--color-text-primary);
+    opacity: 0.7;
+    text-align: center;
+    font-weight: 400;
+    font-style: normal;
+    user-select: none;
+    width: 100%;
+}
+
+
+/* Для планшетов и десктопов — выравниваем по горизонтали */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center; /* Выравниваем вертикально по центру */
+        text-align: left;
+    }
+}
+
+/* Блок с адресом, телефоном и почтой — по горизонтали */
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin: 0 auto;
+}
+
+
+/* На десктопе — в одну линию */
+@media (min-width: 768px) {
+    .contactInfo {
+        flex-direction: row;
+        gap: 3rem;
+        align-items: center;
+        margin: 0;
+    }
+}
+
+/* Для десктопа — справа и без верхнего отступа */
+@media (min-width: 768px) {
+    .socialList {
+        margin-top: 0;
+        justify-content: flex-end;
+    }
+}
+
+.socialIconLink {
+    color: var(--color-primary);
+    font-size: 2.5rem;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.socialIconLink:hover {
+    color: var(--color-primary-dark);
+    transform: scale(1.2);
+}
+
+.footerBottom {
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+    color: var(--color-text-primary);
+    opacity: 0.7;
+    text-align: center;
+    font-weight: 400;
+    font-style: normal;
+    user-select: none;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .footerBottom {
+        margin-top: 2rem;
+        order: 1;
+        text-align: center;
+        width: 100%;
+    }
+}

@@ -14,7 +14,7 @@
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(5px);
     /*background: rgba(0, 0, 0, 0.3);*/
-    z-index: 1000;
+    z-index: 100;
 }
 
 /* Хедер */
@@ -56,7 +56,7 @@
     transform: translateX(100%);
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
-    z-index: 1001; /* выше хедера */
+    z-index: 110; /* выше хедера */
 }
 
 /* Открытое меню */
@@ -91,7 +91,7 @@
     font-size: 2.5rem;
     cursor: pointer;
     color: #000; /* черный цвет */
-    z-index: 1100; /* всегда сверху меню */
+    z-index: 210; /* всегда сверху меню */
     transition: color 0.3s ease;
     user-select: none;
 }
@@ -111,7 +111,7 @@
     width: 25px;
     height: 20px;
     padding: 0;
-    z-index: 1002; /* чуть выше меню */
+    z-index: 200; /* чуть выше меню */
 }
 
 .line {

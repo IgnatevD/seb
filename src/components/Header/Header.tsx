@@ -25,7 +25,9 @@ export default function Header({ menuOpen, toggleMenu, closeMenu }: HeaderProps)
       <Container>
         <header className={styles.header}>
           <div className={styles.logo}>
-            <img src={logoSeb} alt="SEB ХАІ логотип" />
+            <a key={"/"} href={"/"} onClick={closeMenu}>
+              <img src={logoSeb} alt="SEB ХАІ логотип" />
+            </a>
           </div>
           <ThemeToggle />
           <nav className={`${styles.nav} ${menuOpen ? styles.open : ''}`}>

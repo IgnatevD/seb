@@ -137,7 +137,7 @@
 /* На больших экранах показываем обычное меню */
 @media (min-width: 768px) {
     .burger {
-        display: none;
+        /*display: none;*/
     }
 
     .nav {

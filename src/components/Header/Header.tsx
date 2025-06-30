@@ -1,5 +1,5 @@
 import styles from './Header.module.css';
-import logoSeb from 'src/img/logo_seb.png';
+import logoSeb from '@/img/logo_seb.png';
 import Container from "../Container";
 import { useMenu } from '../../context/MenuContext';
 

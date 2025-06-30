@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import styles from './NewsCarousel.module.css';
-import ingNew from 'src/img/news/new.png';
-import ingNew1 from 'src/img/news/new1.avif';
-import ingNew2 from 'src/img/news/new2.jpeg';
+import ingNew from '@/img/news/new.png';
+import ingNew1 from '@/img/news/new1.avif';
+import ingNew2 from '@/img/news/new2.jpeg';
 
 const newsItems = [
   {

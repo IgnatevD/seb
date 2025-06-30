@@ -23,29 +23,29 @@ const Timeline: React.FC = () => {
     });
   }, []);
 
-  useEffect(() => {
-    if (!containerRef.current) return;
-
-    const visibleNumbers = visibleItems
-      .map((id) => numberRefs.current[id])
-      .filter(Boolean) as HTMLSpanElement[];
-
-    if (visibleNumbers.length < 2) {
-      setLineHeight(0);
-      return;
-    }
-
-    const first = visibleNumbers[0];
-    const last = visibleNumbers[visibleNumbers.length - 1];
-
-    const containerTop = containerRef.current.getBoundingClientRect().top;
-
-    const topPos = first.getBoundingClientRect().top - containerTop + first.offsetHeight / 2;
-    const bottomPos = last.getBoundingClientRect().top - containerTop + last.offsetHeight / 2;
-
-    setLineTop(topPos);
-    setLineHeight(bottomPos - topPos);
-  }, [visibleItems]);
+  // useEffect(() => {
+  //   if (!containerRef.current) return;
+  //
+  //   const visibleNumbers = visibleItems
+  //     .map((id) => numberRefs.current[id])
+  //     .filter(Boolean) as HTMLSpanElement[];
+  //
+  //   if (visibleNumbers.length < 2) {
+  //     setLineHeight(0);
+  //     return;
+  //   }
+  //
+  //   const first = visibleNumbers[0];
+  //   const last = visibleNumbers[visibleNumbers.length - 1];
+  //
+  //   const containerTop = containerRef.current.getBoundingClientRect().top;
+  //
+  //   const topPos = first.getBoundingClientRect().top - containerTop + first.offsetHeight / 2;
+  //   const bottomPos = last.getBoundingClientRect().top - containerTop + last.offsetHeight / 2;
+  //
+  //   setLineTop(topPos);
+  //   setLineHeight(bottomPos - topPos);
+  // }, [visibleItems]);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -72,7 +72,7 @@ const Timeline: React.FC = () => {
   const openModal = (stage: typeof stages[number]) => {
     setModalData({
       title: stage.title,
-      content: stage?.modalDescription || (
+      content: (
         <p>Подробная информация отсутствует.</p>
       ),
     });
@@ -118,7 +118,7 @@ const Timeline: React.FC = () => {
               <div className={styles.content}>
                 <span
                   className={styles.number}
-                  ref={(el) => (numberRefs.current[stage.id] = el)}
+                  ref={(el) => { numberRefs.current[stage.id] = el; }}
                 >
                   {stage.id}
                 </span>

@@ -1,13 +1,38 @@
+/* Mobile-first (по умолчанию для телефонов) */
 .container {
-    max-width: 1200px;
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 1.2rem;
+    padding: 0 1rem;
     box-sizing: border-box;
 }
 
-@media (max-width: 768px) {
+/* Планшеты (≥ 768px) */
+@media (min-width: 768px) {
     .container {
-        max-width: 100%;
-        padding: 0 1.7rem;
+        max-width: 720px;
+        padding: 0 1.5rem;
+    }
+}
+
+/* Малые десктопы (≥ 1024px) */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 960px;
+        padding: 0 2rem;
+    }
+}
+
+/* Стандартный десктоп (≥ 1200px) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* Большие экраны (≥ 1440px) */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1200px;
     }
 }

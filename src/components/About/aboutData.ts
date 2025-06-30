@@ -1,13 +1,13 @@
-import Pronchakov from '../../img/deanate/Прончаков.avif';
-import Danova from '../../img/deanate/Данова.avif';
-import Klimenko from '../../img/deanate/Клименко.avif';
-import Petryk from '../../img/deanate/Петрик.avif';
-import Liba from '../../img/deanate/Лыба.avif';
-import Kuznetsova from '../../img/deanate/Кузнецова.avif';
-import Volobuyeva from '../../img/deanate/Волобуєва.avif';
-import Kovalchuk from '../../img/deanate/Ковальчук.avif';
-import Gatylo from '../../img/deanate/Гатило.avif';
-import Turkin from '../../img/deanate/Туркін.avif';
+import Pronchakov from 'src/img/deanate/Прончаков.avif';
+import Danova from 'src/img/deanate/Данова.avif';
+import Klimenko from 'src/img/deanate/Клименко.avif';
+import Petryk from 'src/img/deanate/Петрик.avif';
+import Liba from 'src/img/deanate/Лыба.avif';
+import Kuznetsova from 'src/img/deanate/Кузнецова.avif';
+import Volobuyeva from 'src/img/deanate/Волобуєва.avif';
+import Kovalchuk from 'src/img/deanate/Ковальчук.avif';
+import Gatylo from 'src/img/deanate/Гатило.avif';
+import Turkin from 'src/img/deanate/Туркін.avif';
 
 export interface StaffMember {
   name: string;

@@ -1,4 +1,4 @@
-import logoSeb from '@/img/logo_seb.png';
+import logoSeb from '@/img/logoSeb.png';
 import Container from "@/components/Container";
 import styles from './Header.module.css';
 

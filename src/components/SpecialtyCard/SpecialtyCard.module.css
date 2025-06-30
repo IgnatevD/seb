@@ -57,7 +57,7 @@
 }
 
 .featureItem {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: var(--color-background);
     border-radius: 12px;
     padding: 0.4rem 1rem;
     margin-right: 0.3rem;

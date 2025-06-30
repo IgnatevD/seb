@@ -1,6 +1,8 @@
 import logoSeb from '@/img/logoSeb.png';
 import Container from "@/components/Container";
 import styles from './Header.module.css';
+import ThemeToggle from "@/components/ThemeToggle";
+
 
 const navLinks = [
   { label: 'Головна', href: '/' },
@@ -25,6 +27,7 @@ export default function Header({ menuOpen, toggleMenu, closeMenu }: HeaderProps)
           <div className={styles.logo}>
             <img src={logoSeb} alt="SEB ХАІ логотип" />
           </div>
+          <ThemeToggle />
           <nav className={`${styles.nav} ${menuOpen ? styles.open : ''}`}>
             {navLinks.map(({ label, href }) => (
               <a key={href} href={href} onClick={closeMenu}>

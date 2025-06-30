@@ -29,5 +29,6 @@ export declare const specialties: {
         name: string;
         role: string;
         company: string;
+        photoUrl: string;
     }[];
 }[];

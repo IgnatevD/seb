@@ -1,84 +1,127 @@
-.container {
-  padding: 1.5rem;
-  max-width: 64rem;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
 
 .title {
-  font-size: 2.25rem;
-  font-weight: bold;
-  color: var(--color-primary);
+    margin-top: 0.5rem;
+    font-size: var(--font-size-2xl);
+    font-weight: bold;
+    color: var(--color-white-soft);
 }
 
 .degree {
-  font-size: 1.125rem;
-  color: var(--color-text-primary);
-  opacity: 0.8;
+    font-size: var(--font-size-xl);
+    color: var(--color-text-primary);
+    opacity: 0.8;
 }
 
 .gridInfo {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
-  font-size: 0.875rem;
-  background-color: var(--color-background);
-  padding: 1rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 8px var(--color-shadow);
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-radius: 1rem;
+    justify-content: center;
 }
 
+/* Стиль карточек */
+.gridInfo p {
+    flex: 1 1 calc(50% - 0.5rem); /* два в строку с учётом gap */
+    max-width: calc(50% - 0.5rem);
+
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    color: var(--color-text-primary);
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    font-size: var(--font-size-xl);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Ховер эффект */
+.gridInfo p:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Текст внутри */
+.gridInfo p strong {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    color: var(--color-primary-dark);
+}
+
+/* Адаптация для планшетов и выше — три в строку */
+@media (min-width: 768px) {
+    .gridInfo {
+        justify-content: start;
+    }
+
+    .gridInfo p {
+        flex: 1 1 calc(33.333% - 1rem);
+        max-width: calc(33.333% - 1rem);
+    }
+}
+
+
 .description {
-  font-size: 1rem;
-  color: var(--color-text-primary);
+    margin-top: 1rem;
+    font-size: var(--font-size-xl);
+    color: var(--color-text-primary);
 }
 
 .sectionTitle {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-top: 1.5rem;
-  color: var(--color-primary-dark);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    color: var(--color-primary-dark);
 }
 
 .list {
-  padding-left: 1.5rem;
-  list-style-type: disc;
+    padding-left: 1.5rem;
+    list-style-type: disc;
 }
 
-.careerCard {
-  background-color: var(--color-white-muted);
-  padding: 1rem;
-  border-radius: 0.75rem;
-  box-shadow: 0 2px 4px var(--color-shadow);
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+.careerGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
-.careerTitle {
-  font-weight: bold;
-  font-size: 1.125rem;
-  color: var(--color-primary-dark);
+.careerGrid > * {
+    flex: 1 1 100%;
+    max-width: 100%;
 }
 
-.salary {
-  font-size: 0.875rem;
-  font-style: italic;
-  color: var(--color-text-primary);
+@media (min-width: 640px) {
+    .careerGrid > * {
+        flex: 1 1 calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
+    }
 }
 
-.alumniCard {
-  background-color: var(--color-white-soft);
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  font-size: 0.95rem;
-  box-shadow: 0 2px 4px var(--color-shadow);
+@media (min-width: 1024px) {
+    .careerGrid > * {
+        flex: 1 1 calc(33.333% - 1rem);
+        max-width: calc(33.333% - 1rem);
+    }
+}
+
+.alumniGrid {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
 }
 
 @media (max-width: 640px) {
-  .gridInfo {
-    grid-template-columns: 1fr;
-  }
+    .gridInfo {
+        grid-template-columns: 1fr;
+    }
 }

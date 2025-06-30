@@ -5,10 +5,10 @@ import ThemeToggle from "@/components/ThemeToggle";
 
 
 const navLinks = [
-  { label: 'Головна', href: '/' },
-  { label: 'Вступ 2025', href: '/vstup2025' },
-  { label: 'Про нас', href: '/#about' },
-  { label: 'Контакти', href: '/#contacts' },
+  {label: 'Головна', href: '/'},
+  {label: 'Вступ 2025', href: '/vstup2025'},
+  {label: 'Про нас', href: '/about'},
+  {label: 'Контакти', href: '/contacts'},
 ];
 
 type HeaderProps = {
@@ -17,7 +17,7 @@ type HeaderProps = {
   closeMenu: () => void;
 };
 
-export default function Header({ menuOpen, toggleMenu, closeMenu }: HeaderProps)  {
+export default function Header({menuOpen, toggleMenu, closeMenu}: HeaderProps) {
   return (
     <div className={styles.wrapper}>
       {menuOpen && <div className={styles.overlay} onClick={closeMenu}></div>}
@@ -26,18 +26,21 @@ export default function Header({ menuOpen, toggleMenu, closeMenu }: HeaderProps)
         <header className={styles.header}>
           <div className={styles.logo}>
             <a key={"/"} href={"/"} onClick={closeMenu}>
-              <img src={logoSeb} alt="SEB ХАІ логотип" />
+              <img src={logoSeb} alt="SEB ХАІ логотип"/>
             </a>
           </div>
-          <ThemeToggle />
-          <nav className={`${styles.nav} ${menuOpen ? styles.open : ''}`}>
-            {navLinks.map(({ label, href }) => (
-              <a key={href} href={href} onClick={closeMenu}>
-                {label}
-              </a>
-            ))}
-          </nav>
-
+          <div className={styles.navContainer}>
+            <nav className={`${styles.nav} ${menuOpen ? styles.open : ''}`}>
+              {navLinks.map(({label, href}) => (
+                <a key={href} href={href} onClick={closeMenu}>
+                  {label}
+                </a>
+              ))}
+            </nav>
+            <div className={styles.themeToggle}>
+              <ThemeToggle/>
+            </div>
+          </div>
           <button
             className={styles.burger}
             onClick={toggleMenu}

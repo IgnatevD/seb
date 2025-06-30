@@ -1,0 +1,60 @@
+.alumniCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    min-width: 200px;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (min-width: 480px) {
+    .alumniCard {
+        max-width: 280px;
+    }
+}
+
+@media (min-width: 768px) {
+    .alumniCard {
+        max-width: 320px;
+    }
+}
+
+
+.alumniCard:hover {
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.alumniPhoto {
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.alumniInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.alumniName {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--color-primary-dark, #222);
+}
+
+.alumniRole {
+    font-size: 0.95rem;
+    color: var(--color-text-primary, #555);
+    margin: 0;
+}
+
+.alumniCompany {
+    font-style: italic;
+    color: var(--color-text-secondary, #888);
+}

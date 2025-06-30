@@ -1,0 +1,107 @@
+.contactWrapper {
+    position: fixed;
+    right: 0.5rem;
+    bottom: 3rem;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    opacity: 0;
+    transform: translate(20px, 50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none;
+}
+
+@media (min-width: 768px) {
+    .contactWrapper {
+        right: 2rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .contactWrapper {
+        right: 3rem;
+    }
+}
+
+@media (min-width: 1800px) {
+    .contactWrapper {
+        right: 15%;
+    }
+}
+
+@media (min-width: 2300px) {
+    .contactWrapper {
+        right: 20%;
+    }
+}
+
+@media (min-width: 2700px) {
+    .contactWrapper {
+        right: 25%;
+    }
+}
+
+
+.contactWrapper.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.contactButton {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0088cc;
+    text-decoration: none;
+    box-shadow: 0 0 0 0 rgba(0, 136, 204, 0.7);
+    animation: pulse 2s infinite;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.contactButton:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: #0077b5;
+}
+
+.contactText {
+    color: #0088cc;
+    font-weight: 500;
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.textVisible {
+    opacity: 1;
+}
+
+.textHidden {
+    opacity: 0;
+}
+
+.contactWrapper:hover .contactText {
+    color: #0077b5;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 136, 204, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 136, 204, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 136, 204, 0);
+    }
+}

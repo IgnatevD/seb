@@ -1,6 +1,5 @@
-
-import { FaTelegram, FaInstagram, FaYoutube, FaFacebook } from "react-icons/fa";
-import type { IconType } from "react-icons";
+import {FaFacebook, FaInstagram, FaTelegram, FaYoutube} from "react-icons/fa";
+import type {IconType} from "react-icons";
 
 export interface SocialLink {
   name: string;
@@ -22,9 +21,9 @@ export const footerInfo: FooterInfo = {
   email: "seb_faculty@khai.edu",
   socialTitle: "Ми у соціальних мережах:",
   socials: [
-    { name: "Telegram", url: "https://t.me/yourchannel", icon: FaTelegram },
-    { name: "Instagram", url: "https://instagram.com/yourprofile", icon: FaInstagram },
-    { name: "Youtube", url: "https://youtube.com/yourchannel", icon: FaYoutube },
-    { name: "Facebook", url: "https://facebook.com/yourpage", icon: FaFacebook },
+    {name: "Telegram", url: "https://t.me/SEB_faculty_khai", icon: FaTelegram},
+    {name: "Instagram", url: "https://www.instagram.com/six.fac", icon: FaInstagram},
+    {name: "Youtube", url: "https://www.youtube.com/@sebfacultykhai", icon: FaYoutube},
+    {name: "Facebook", url: "https://www.facebook.com/groups/1234970054055705", icon: FaFacebook},
   ],
 };

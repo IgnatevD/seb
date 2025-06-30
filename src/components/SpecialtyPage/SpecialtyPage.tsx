@@ -1,18 +1,21 @@
-
-import { useParams } from "react-router-dom";
-import { specialties, specialtyTexts as t  } from "../../data/specialties";
+import {useParams} from "react-router-dom";
+import Container from "@/components/Container";
+import CareerCard from "@/components/CareerCard";
+import AlumniCard from "@/components/AlumnusCard";
+import {specialties, specialtyTexts as t} from "../../data/specialties";
 import styles from "./SpecialtyPage.module.css";
 
 export default function SpecialtyPage() {
-  const { slug } = useParams();
+  const {slug} = useParams();
   const specialty = specialties.find(s => s.slug === slug);
+
 
   if (!specialty)
     return <div className="text-center mt-10 text-xl">{t.notFound}</div>;
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>{specialty.title}</h1>
+    <Container>
+      <h1 className={styles.title}>{specialty.slug} {specialty.title}</h1>
       <p className={styles.degree}>({specialty.degree})</p>
 
       <div className={styles.gridInfo}>
@@ -21,7 +24,6 @@ export default function SpecialtyPage() {
         <p><strong>{t.totalPlaces}</strong> {specialty.totalPlaces}</p>
         <p><strong>{t.fullTimeCost}</strong> {specialty.costFullTime}</p>
         <p><strong>{t.partTimeCost}</strong> {specialty.costPartTime}</p>
-
       </div>
 
       <p className={styles.description}>{specialty.description}</p>
@@ -35,28 +37,29 @@ export default function SpecialtyPage() {
 
       <div>
         <h2 className={styles.sectionTitle}>{t.careersTitle}</h2>
-        <div className="grid md:grid-cols-2 gap-4">
+        <p>{t.careersDescription}</p>
+        <p>{t.careersDescription2}</p>
+        <div className={styles.careerGrid}>
           {specialty.careers.map((career, i) => (
-            <div key={i} className={styles.careerCard}>
-              <h3 className={styles.careerTitle}>{career.title}</h3>
-              <p className={styles.salary}>{career.salary}</p>
-              <p>{career.description}</p>
-            </div>
+            <CareerCard key={i} career={career}/>
           ))}
         </div>
       </div>
-
-      <div>
+      {!!specialty?.alumni.length && (<div>
         <h2 className={styles.sectionTitle}>{t.alumniTitle}</h2>
-        <div className="grid sm:grid-cols-2 gap-4">
+        <div className={styles.alumniGrid}>
           {specialty.alumni.map((alumnus, i) => (
-            <div key={i} className={styles.alumniCard}>
-              <strong>{alumnus.name}</strong><br />
-              {alumnus.role} у <em>{alumnus.company}</em>
-            </div>
+            <AlumniCard
+              key={i}
+              name={alumnus.name}
+              role={alumnus.role}
+              company={alumnus.company}
+              photoUrl={""}
+            />
           ))}
         </div>
-      </div>
-    </div>
+      </div>)}
+
+    </Container>
   );
 }

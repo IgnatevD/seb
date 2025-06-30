@@ -36,14 +36,10 @@ export default function Hero() {
     <section id="home" className={`${styles.hero} glass`}>
       <h1 className={styles.title}>
         {facultyInfo.facultyName.map((line, index) => (
-          <span key={index}>{index === 0 ? (
-            <>
-              {line}
-              <br />
-            </>
-          ) : (
-            line
-          )}</span>
+          <span key={index}>{(<>
+            {line}
+            <br />
+          </>)}</span>
         ))}
       </h1>
       <p className={styles.subtitle}>

@@ -4,6 +4,7 @@ import Hero from "./Hero";
 import SpecialtySection from "./SpecialtySection";
 import AboutSection from "../../components/About/AboutSection.tsx";
 import NewsCarousel from "../../components/NewsCarousel";
+import Videos from "@/pages/Home/Videos";
 
 
 
@@ -12,16 +13,9 @@ export default function Home() {
     <Container>
       <Hero />
       <SpecialtySection/>
+      <Videos />
       <NewsCarousel />
       <AboutSection/>
-
-      <footer id="contacts" className="footer glass">
-        <div className="contacts-info">
-        </div>
-
-        <div className="socials">
-        </div>
-      </footer>
     </Container>
   );
 }

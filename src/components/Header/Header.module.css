@@ -14,6 +14,9 @@
     -webkit-backdrop-filter: blur(3px);
     z-index: 100;
 }
+.themeToggle {
+    margin-left: 7rem;
+}
 
 .header {
     display: flex;
@@ -136,6 +139,12 @@
     .burger {
         display: none;
     }
+    .navContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+    }
 
     .nav {
         position: static;
@@ -147,7 +156,7 @@
         -webkit-backdrop-filter: none;
         box-shadow: none;
         flex-direction: row;
-        padding: 0;
+        padding:0;
         border-radius: 0;
     }
 
@@ -161,5 +170,9 @@
     .nav a:hover,
     .nav a:focus {
         color: var(--color-primary);
+    }
+
+    .themeToggle {
+        margin-left: 0rem;
     }
 }

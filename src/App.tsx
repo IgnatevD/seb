@@ -11,11 +11,11 @@ import styles from './App.module.css';
 
 function App() {
   const currentYear = new Date().getFullYear();
-  const { menuOpen} = useMenu();
+  const { menuOpen, toggleMenu, closeMenu } = useMenu()
 
   return (
     <Router>
-      <Header />
+      <Header menuOpen={menuOpen} toggleMenu={toggleMenu} closeMenu={closeMenu} />
       <main className={`${styles.main} ${menuOpen ? styles.blurred : ''}`}>
         <Routes>
           <Route path="/" element={<Home />} />

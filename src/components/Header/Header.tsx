@@ -1,7 +1,6 @@
-import styles from './Header.module.css';
 import logoSeb from '@/img/logo_seb.png';
-import Container from "../Container";
-import { useMenu } from '../../context/MenuContext';
+import Container from "@/components/Container";
+import styles from './Header.module.css';
 
 const navLinks = [
   { label: 'Головна', href: '/' },
@@ -10,9 +9,13 @@ const navLinks = [
   { label: 'Контакти', href: '/#contacts' },
 ];
 
-export default function Header() {
-  const { menuOpen, toggleMenu, closeMenu } = useMenu();
+type HeaderProps = {
+  menuOpen: boolean;
+  toggleMenu: () => void;
+  closeMenu: () => void;
+};
 
+export default function Header({ menuOpen, toggleMenu, closeMenu }: HeaderProps)  {
   return (
     <div className={styles.wrapper}>
       <Container>

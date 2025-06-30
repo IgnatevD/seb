@@ -14,7 +14,6 @@ export const MenuProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const toggleMenu = () => setMenuOpen(prev => !prev);
   const closeMenu = () => setMenuOpen(false);
 
-  // 👇 Блокировка скролла при открытом меню
   useEffect(() => {
     if (menuOpen) {
       document.body.style.overflow = "hidden";
@@ -36,6 +35,7 @@ export const MenuProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
 export const useMenu = () => {
   const context = useContext(MenuContext);
+
   if (!context) {
     throw new Error("useMenu must be used within MenuProvider");
   }

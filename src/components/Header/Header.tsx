@@ -18,14 +18,13 @@ type HeaderProps = {
 export default function Header({ menuOpen, toggleMenu, closeMenu }: HeaderProps)  {
   return (
     <div className={styles.wrapper}>
+      {menuOpen && <div className={styles.overlay} onClick={closeMenu}></div>}
+
       <Container>
         <header className={styles.header}>
           <div className={styles.logo}>
             <img src={logoSeb} alt="SEB ХАІ логотип" />
           </div>
-
-          {menuOpen && <div className={styles.overlay} onClick={closeMenu}></div>}
-
           <nav className={`${styles.nav} ${menuOpen ? styles.open : ''}`}>
             {navLinks.map(({ label, href }) => (
               <a key={href} href={href} onClick={closeMenu}>

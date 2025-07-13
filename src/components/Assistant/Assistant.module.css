@@ -1,0 +1,183 @@
+/* Общие стили */
+.container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-radius: 12px;
+    max-width: 400px;
+    margin: 2rem auto;
+}
+
+.title {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--color-primary-dark, #1e293b);
+    text-align: center;
+}
+
+.select {
+    padding: 6px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    width: 90%;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255 255 255 / 0);
+    box-shadow: inset 0 0 6px rgba(255 255 255 / 0.5),
+    0 4px 30px rgba(0 0 0 / 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    color: var(--color-primary-dark);
+    font-weight: 600;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+
+}
+
+
+/* Матовый эффект для input и select */
+.inputNumber {
+    padding: 10px 14px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 160px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255 255 255 / 0.15);
+    box-shadow: inset 0 0 6px rgba(255 255 255 / 0.5),
+    0 4px 30px rgba(0 0 0 / 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    color: #1e293b;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.select:hover,
+.inputNumber:hover,
+.select:focus,
+.inputNumber:focus {
+    background: rgba(255 255 255 / 0.25);
+    box-shadow: inset 0 0 8px rgba(255 255 255 / 0.7),
+    0 6px 40px rgba(0 0 0 / 0.15);
+    outline: none;
+}
+
+/* Лейбл с инпутом в одной строке */
+.labelBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: #334155;
+}
+
+/* Для колонки с предметами - контейнер для лейблов */
+.subjectsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* Чекбокс */
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    font-weight: 600;
+    color: #334155;
+    gap: 10px;
+    user-select: none;
+}
+
+.checkboxLabel input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #007bff;
+    border-radius: 6px;
+    transition: box-shadow 0.3s ease;
+}
+
+.checkboxLabel input[type="checkbox"]:hover {
+    box-shadow: 0 0 8px #007bffaa;
+}
+
+/* Кнопка */
+.button {
+    margin-top: 24px;
+    width: 100%;
+    padding: 14px 0;
+    font-size: 1.1rem;
+    cursor: pointer;
+    background-color: var(--color-primary);
+    color: var(--color-white-soft);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.5);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 12px 32px rgba(0, 86, 179, 0.7);
+}
+
+/* Адаптивность */
+
+/* Tablet: 2 колонки, input с фиксированной шириной */
+@media (min-width: 600px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .select {
+        padding: 8px;
+        width: 330px;
+        margin-left: 1rem;
+    }
+
+    .subjectsGrid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 24px;
+    }
+
+    .labelBlock {
+        /* здесь флексовая строка с предметом и инпутом */
+    }
+
+    .inputNumber {
+        width: 120px;
+        margin-left: 12px;
+    }
+}
+
+/* Desktop: шире, input шире */
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 32px;
+    }
+
+    .subjectsGrid {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px 32px;
+    }
+
+    .inputNumber {
+        width: 110px;
+        margin-left: 16px;
+    }
+
+    .containerFlex {
+        display: flex;
+        justify-content: start;
+    }
+
+    .subjectsGrid {
+        margin-left: 4rem;
+        max-width: 600px;
+    }
+}

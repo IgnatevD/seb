@@ -51,6 +51,17 @@ export default function SpecialtyCard({
       </ul>
 
       <p className={styles.description}>{description}</p>
+      <div className={styles.budgetBlock}>
+        <p>
+          <span className={styles.budgetBlockTitle}>Бюджет: </span>
+          <span>від 120 балів</span>
+        </p>
+        <p>
+          <span className={styles.budgetBlockTitle}>Контракт: </span>
+          <span>від 120 балів</span>
+        </p>
+      </div>
+
 
       <button
         onClick={handleButtonClick}

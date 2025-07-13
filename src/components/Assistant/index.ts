@@ -1,1 +1,1 @@
-export { default } from './SpecialtyCard.tsx';
+export {default} from './Assistant.tsx';

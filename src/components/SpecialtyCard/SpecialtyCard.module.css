@@ -82,6 +82,18 @@
     margin: 0 0 1.5rem 0;
 }
 
+.budgetBlock {
+    margin-bottom: 1.5rem;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-primary-dark);
+}
+
+.budgetBlockTitle {
+    font-weight: 700;
+}
+
+
 /* Кнопка */
 .selectButton {
     display: block;
@@ -105,3 +117,5 @@
     color: white;
     border-color: #334155;
 }
+
+

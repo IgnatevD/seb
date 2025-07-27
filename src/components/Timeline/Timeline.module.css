@@ -51,9 +51,8 @@
 }
 
 .content {
-
     background: rgba(207, 226, 243, 0.25);
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     border-radius: 12px;
     box-shadow:

@@ -1,1 +1,1 @@
-export {default} from './Assistant.tsx';
+export { default } from './Assistant.tsx';

@@ -10,8 +10,8 @@
 .overlay {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     z-index: 100;
 }
 .themeToggle {
@@ -36,41 +36,38 @@
     width: auto;
 }
 
-/* Основное боковое меню */
 .nav {
-    position: fixed; /* поверх всего */
+    position: fixed;
     top: 0;
     right: 0;
-    height: 100vh; /* на всю высоту */
-    width: 80%; /* чуть шире */
-    background: var(--color-background);
-    backdrop-filter: blur(4px); /* сильнее размытие */
+    height: 100vh;
+    width: 80%;
+    background: var(--color-background-blur);
+    backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.25); /* тень слева */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.25);
 
     display: flex;
     flex-direction: column;
     padding: 8rem 2rem 2rem 4rem;
 
-    /* Сдвиг за экран справа */
     transform: translateX(100%);
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
-    z-index: 1100; /* выше хедера */
+    z-index: 1100;
 }
 
-/* Открытое меню */
 .nav.open {
     transform: translateX(0);
 }
 
-/* Ссылки меню */
+
 .nav a {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     font-size: 1.6rem;
     font-weight: 700;
-    color: var(--color-text-primary);
+    color: var(--color-primary);
     text-decoration: none;
     user-select: none;
     transition: color 0.3s ease;
@@ -81,7 +78,6 @@
     color: var(--color-primary);
 }
 
-/* Кнопка закрытия */
 .closeBtnMenu {
     position: absolute;
     top: 1rem;
@@ -91,7 +87,7 @@
     font-size: 2.5rem;
     cursor: pointer;
     color: var(--color-text-primary);
-    z-index: 2100; /* всегда сверху меню */
+    z-index: 2100;
     transition: color 0.3s ease;
     user-select: none;
 }
@@ -100,7 +96,6 @@
     color: var(--color-primary);
 }
 
-/* Бургер для открытия */
 .burger {
     position: relative;
     border: none;
@@ -111,7 +106,7 @@
     width: 35px;
     height: 30px;
     padding: 0.3rem;
-    z-index: 2100; /* чуть выше меню */
+    z-index: 2100;
 }
 
 .line {
@@ -134,7 +129,6 @@
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* На больших экранах показываем обычное меню */
 @media (min-width: 768px) {
     .burger {
         display: none;

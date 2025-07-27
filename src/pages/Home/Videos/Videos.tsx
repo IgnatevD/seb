@@ -4,7 +4,7 @@ import styles from './Videos.module.css';
 const baseVideoIds = [
   '8HNkzTN12Xk',
   '6D4uLLWjdWE',
-  'r7SGHfXK15Q'
+  'r7SGHfXK15Q',
 ];
 
 function getEmbedUrl(videoId: string, autoplay = false) {
@@ -17,11 +17,13 @@ function getThumbnailUrl(videoId: string) {
 
 export default function Videos() {
   const [selectedId, setSelectedId] = useState(baseVideoIds[0]);
+
   const mainVideoRef = useRef<HTMLIFrameElement>(null);
-  const hasAutoPlayed = useRef(false);  // флаг для первого автозапуска
+
+  const hasAutoPlayed = useRef(false);
 
   useEffect(() => {
-    hasAutoPlayed.current = false; // сбрасываем флаг при смене видео
+    hasAutoPlayed.current = false;
   }, [selectedId]);
 
   useEffect(() => {
@@ -29,15 +31,18 @@ export default function Videos() {
       ([entry]) => {
         if (entry.isIntersecting && mainVideoRef.current && !hasAutoPlayed.current) {
           const iframe = mainVideoRef.current;
+
           const src = getEmbedUrl(selectedId, true);
 
-          iframe.src = '';  // сброс src — трюк для перезапуска
+          iframe.src = '';
           iframe.src = src;
 
-          hasAutoPlayed.current = true;  // отметили, что автоплей уже был
+          hasAutoPlayed.current = true;
         }
       },
-      { threshold: 0.6 }
+      {
+        threshold: 0.6,
+      },
     );
 
     if (mainVideoRef.current) observer.observe(mainVideoRef.current);

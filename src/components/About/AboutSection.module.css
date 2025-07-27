@@ -1,10 +1,11 @@
 .aboutSection {
-    margin: 0 auto;
+    margin: 2rem auto;
+
 }
 
 .heading {
     position: relative;
-    color:var(--color-primary);
+    color:var(--color-primary-dark);
     font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 1rem;
@@ -12,8 +13,6 @@
 }
 
 .text {
-    max-height: 300px;
-    overflow-y: hidden;
     transition: max-height 0.4s ease;
     line-height: 1.4;
     margin-bottom: 0.5rem;

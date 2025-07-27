@@ -1,10 +1,7 @@
 /* Общие стили */
 .container {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    border-radius: 12px;
-    max-width: 400px;
-    margin: 2rem auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 
 .title {
@@ -13,6 +10,11 @@
     font-size: 1.8rem;
     color: var(--color-primary-dark, #1e293b);
     text-align: center;
+}
+
+.containerSelect {
+    display: flex;
+    align-items: baseline;
 }
 
 .select {
@@ -34,7 +36,6 @@
 }
 
 
-/* Матовый эффект для input и select */
 .inputNumber {
     padding: 10px 14px;
     font-size: 1rem;
@@ -71,7 +72,6 @@
     color: #334155;
 }
 
-/* Для колонки с предметами - контейнер для лейблов */
 .subjectsGrid {
     display: grid;
     grid-template-columns: 1fr;
@@ -79,7 +79,6 @@
     margin-bottom: 20px;
 }
 
-/* Чекбокс */
 .checkboxLabel {
     display: flex;
     align-items: center;
@@ -103,7 +102,6 @@
     box-shadow: 0 0 8px #007bffaa;
 }
 
-/* Кнопка */
 .button {
     margin-top: 24px;
     width: 100%;
@@ -126,14 +124,7 @@
     box-shadow: 0 12px 32px rgba(0, 86, 179, 0.7);
 }
 
-/* Адаптивность */
-
-/* Tablet: 2 колонки, input с фиксированной шириной */
 @media (min-width: 600px) {
-    .container {
-        max-width: 100%;
-    }
-
     .select {
         padding: 8px;
         width: 330px;
@@ -163,7 +154,7 @@
 
     .subjectsGrid {
         grid-template-columns: 1fr 1fr;
-        gap: 24px 32px;
+        /*gap: 24px 32px;*/
     }
 
     .inputNumber {
@@ -177,7 +168,7 @@
     }
 
     .subjectsGrid {
-        margin-left: 4rem;
+        margin-left: 3rem;
         max-width: 600px;
     }
 }

@@ -3,34 +3,9 @@
     line-height: 1.2;
     border-radius: 12px;
 
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 
-    /* Бордер и тень */
-    box-shadow: 0 4px 16px var(--color-shadow);
-
-    /* Скролл */
-    max-height: 30vh;
-    overflow-y: auto;
-    scrollbar-gutter: stable;
-
-    /* Сглаживание скролла (опционально) */
-    scroll-behavior: smooth;
-    scrollbar-width: thin;
-    scrollbar-color: var(--color-primary-light) transparent;
-}
-
-/* Кастомизация скроллбара для WebKit */
-.container::-webkit-scrollbar {
-    width: 8px;
-}
-
-.container::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.container::-webkit-scrollbar-thumb {
-    background-color: var(--color-primary-light);
 }
 
 

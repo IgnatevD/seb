@@ -1,9 +1,10 @@
-import {useEffect, useState} from 'react';
-import styles from './ContactButton.module.css';
+import { useEffect, useState } from 'react';
 import SendIcon from '@mui/icons-material/Send';
+import styles from './ContactButton.module.css';
 
 export default function ContactButton() {
   const [visible, setVisible] = useState(false);
+
   const [textVisible, setTextVisible] = useState(true);
 
   useEffect(() => {
@@ -16,7 +17,7 @@ export default function ContactButton() {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      setTextVisible(prev => !prev);
+      setTextVisible((prev) => !prev);
     }, textVisible ? 5000 : 10000);
 
     return () => clearTimeout(timeout);
@@ -24,16 +25,18 @@ export default function ContactButton() {
 
   return (
     <div className={`${styles.contactWrapper} ${visible ? styles.show : ''}`}>
-        <span className={`${styles.contactText} ${textVisible ? styles.textVisible : styles.textHidden}`}>
-          Потрібна <br/> консультація?
-        </span>
+      <span className={`${styles.contactText} ${textVisible ? styles.textVisible : styles.textHidden}`}>
+        Потрібна
+        <br />
+        консультація?
+      </span>
       <a
         href="https://t.me/sebVSTUP"
         target="_blank"
         rel="noopener noreferrer"
         className={styles.contactButton}
       >
-        <SendIcon fontSize="small"/>
+        <SendIcon fontSize="small" />
       </a>
     </div>
   );

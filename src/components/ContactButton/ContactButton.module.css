@@ -1,6 +1,6 @@
 .contactWrapper {
     position: fixed;
-    right: 0.5rem;
+    right: 0.7rem;
     bottom: 3rem;
     z-index: 9999;
     display: flex;
@@ -8,7 +8,7 @@
     align-items: center;
     gap: 0.75rem;
     opacity: 0;
-    transform: translate(20px, 50px);
+    transform: translateY(50px);
     transition: opacity 0.5s ease, transform 0.5s ease;
     pointer-events: none;
 }
@@ -46,16 +46,15 @@
 .contactWrapper.show {
     opacity: 1;
     transform: translateY(0);
-    touch-action: manipulation;
 }
 
 .contactButton {
-    width: 48px;
-    height: 48px;
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,7 +64,13 @@
     animation: pulse 2s infinite;
     transition: background-color 0.3s, color 0.3s;
     pointer-events: auto;
-    touch-action: manipulation;
+}
+
+@media (min-width: 2700px) {
+    .contactButton {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 .contactButton:hover {
@@ -77,10 +82,16 @@
     color: var(--color-primary);
     font-weight: 500;
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     line-height: 1.2;
     opacity: 0;
     transition: opacity 1s ease;
+}
+
+@media (min-width: 768px) {
+    .contactText {
+        font-size: 1rem;
+    }
 }
 
 .textVisible {

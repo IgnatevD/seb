@@ -9,15 +9,6 @@
   --font-size-2xl: 2rem;    /* 32px */
   --font-size-3xl: 2.5rem;  /* 40px */
 
-  @media (min-width: 768px) {
-    :root {
-      --font-size-base: 1.125rem; /* 18px */
-      --font-size-md: 1.25rem;    /* 20px */
-      --font-size-xl: 2rem;       /* 32px */
-      --font-size-3xl: 3rem;      /* 48px */
-    }
-  }
-
   --line-height-base: 1.5;
   --line-height-tight: 1.2;
   --line-height-loose: 1.75;
@@ -137,4 +128,22 @@ ul, ol {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --font-size-base: 1.125rem;
+    --font-size-md: 1.25rem;
+    --font-size-xl: 2rem;
+    --font-size-3xl: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --font-size-base: 1.125rem;
+    --font-size-md: 1.25rem;
+    --font-size-xl: 2rem;
+    --font-size-3xl: 3.5rem;
+  }
 }

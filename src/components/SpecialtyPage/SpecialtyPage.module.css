@@ -1,7 +1,6 @@
-
 .title {
     margin-top: 0.5rem;
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-xl);
     font-weight: bold;
     color: var(--color-white-soft);
 }
@@ -21,10 +20,9 @@
     justify-content: center;
 }
 
-/* Стиль карточек */
 .gridInfo p {
-    flex: 1 1 calc(50% - 0.5rem); /* два в строку с учётом gap */
-    max-width: calc(50% - 0.5rem);
+    flex: 1 1 calc(50% - 0.5rem);
+    max-width: calc(50% - 0.2rem);
 
     background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(4px);
@@ -37,25 +35,23 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-md);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-/* Ховер эффект */
-.gridInfo p:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Текст внутри */
 .gridInfo p strong {
-    font-size: 1rem;
+    font-size: var(--font-size-md);
     margin-bottom: 0.25rem;
     color: var(--color-primary-dark);
 }
 
-/* Адаптация для планшетов и выше — три в строку */
+
 @media (min-width: 768px) {
+    .title {
+        font-size: var(--font-size-3xl);
+    }
+
     .gridInfo {
         justify-content: start;
     }
@@ -68,9 +64,9 @@
 
 
 .description {
-    margin-top: 1rem;
-    font-size: var(--font-size-xl);
+    margin-top: var(--font-size-md);
     color: var(--color-text-primary);
+    text-align: justify;
 }
 
 .sectionTitle {

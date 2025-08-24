@@ -8,7 +8,7 @@ const navLinks = [
     label: 'Головна', href: '/',
   },
   {
-    label: 'Вступ 2025', href: '/vstup2025',
+    label: 'Вступ', href: '/vstup',
   },
   {
     label: 'Про нас', href: '/about',

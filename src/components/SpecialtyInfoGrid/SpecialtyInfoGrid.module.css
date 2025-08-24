@@ -1,0 +1,48 @@
+.gridInfo {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-radius: 1rem;
+    justify-content: center;
+}
+
+.gridInfo p {
+    flex: 1 1 calc(50% - 0.5rem);
+    max-width: calc(50% - 0.2rem);
+    width: 100%;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    color: var(--color-text-primary);
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    font-size: var(--font-size-md);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gridInfo p strong {
+    font-size: var(--font-size-md);
+    margin-bottom: 0.25rem;
+    color: var(--color-primary-dark);
+}
+
+
+@media (min-width: 768px) {
+    .title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .gridInfo {
+        justify-content: start;
+    }
+
+    .gridInfo p {
+        flex: 1 1 calc(33.333% - 1rem);
+        max-width: calc(33.333% - 1rem);
+    }
+}

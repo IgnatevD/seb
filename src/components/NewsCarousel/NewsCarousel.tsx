@@ -1,15 +1,9 @@
-import { useState, useEffect } from 'react';
-import styles from './NewsCarousel.module.css';
-import ingNew from '@/img/news/new.png';
+import { useState } from 'react';
 import ingNew1 from '@/img/news/new1.avif';
 import ingNew2 from '@/img/news/new2.jpeg';
+import styles from './NewsCarousel.module.css';
 
 const newsItems = [
-  {
-    title: 'День відкритих дверей ХАІ',
-    description: 'Запрошуємо на зустріч з викладачами, екскурсії кампусом і презентацію спеціальностей!',
-    image: ingNew,
-  },
   {
     title: 'Календар подій для вступників',
     description: 'Дізнайтесь про всі важливі дати: подача заяв, іспити, результати.',
@@ -17,7 +11,7 @@ const newsItems = [
   },
   {
     title: 'Нові освітні програми',
-    description: 'У 2025 році відкриваються сучасні спеціальності в ІТ та інженерії!',
+    description: 'У 2026 році відкриваються сучасні спеціальності в ІТ та інженерії!',
     image: ingNew2,
   },
 ];
@@ -25,19 +19,21 @@ const newsItems = [
 export default function NewsCarousel() {
   const [index, setIndex] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % newsItems.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setIndex((prev) => (prev + 1) % newsItems.length);
+  //   }, 4000);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
     <div className={styles.carousel}>
       <h2 className={styles.sectionTittle}>Наші події</h2>
       <div
         className={styles.slidesContainer}
-        style={{ transform: `translateX(-${index * 100}%)` }}
+        style={{
+          transform: `translateX(-${index * 100}%)`,
+        }}
       >
         {newsItems.map(({ title, description, image }, i) => (
           <div key={i} className={styles.card}>

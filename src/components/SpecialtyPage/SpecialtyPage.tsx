@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import Container from '@/components/Container';
 import CareerCard from '@/components/CareerCard';
 import AlumniCard from '@/components/AlumnusCard';
+import SpecialtyInfoGrid from '@/components/SpecialtyInfoGrid';
 import { specialties, specialtyTexts as t } from '../../data/specialties';
 import styles from './SpecialtyPage.module.css';
 
@@ -21,33 +22,7 @@ export default function SpecialtyPage() {
       </h1>
       <p className={styles.degree}>{specialty.degree}</p>
 
-      <div className={styles.gridInfo}>
-        <p>
-          <strong>{t.minScore}</strong>
-          {' '}
-          {specialty.minBudgetScore2023}
-        </p>
-        <p>
-          <strong>{t.budgetPlaces}</strong>
-          {' '}
-          {specialty.budgetPlaces}
-        </p>
-        <p>
-          <strong>{t.totalPlaces}</strong>
-          {' '}
-          {specialty.totalPlaces}
-        </p>
-        <p>
-          <strong>{t.fullTimeCost}</strong>
-          {' '}
-          {specialty.costFullTime}
-        </p>
-        <p>
-          <strong>{t.partTimeCost}</strong>
-          {' '}
-          {specialty.costPartTime}
-        </p>
-      </div>
+      <SpecialtyInfoGrid specialty={specialty} />
 
       <p className={styles.description}>{specialty.description}</p>
 
